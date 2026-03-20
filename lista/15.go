@@ -8,16 +8,14 @@ func main() {
 	fmt.Scan(&n)
 
 	if n%2 > 0 {
-		for n-1 > 0 {
-			q = (n - 1) * (n - 1)
-			fmt.Printf("%d^2 = %d\n", (n - 1), q)
-			n -= 2
+		for i := 1; i <= n; i += 2 {
+			q = (i + 1) * (i + 1)
+			fmt.Printf("%d^2 = %d\n", i+1, q)
 		}
 	} else {
-		for n > 0 {
-			q = n * n
-			fmt.Printf("%d^2 = %d\n", n, q)
-			n -= 2
+		for i := 2; i <= n; i += 2 {
+			q = i * i
+			fmt.Printf("%d^2 = %d\n", i, q)
 		}
 	}
 }
