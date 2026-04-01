@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var preco, pag int
+	var pag int
+	var preco float64
 	fmt.Printf("Digite o preço do produto: ")
 	fmt.Scan(&preco)
 	fmt.Printf("Digite a condição de pagamento: (1-4)")
