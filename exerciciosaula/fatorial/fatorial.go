@@ -6,7 +6,7 @@ func main() {
 	var n int
 	fmt.Print("Digite um número: ")
 	fmt.Scan(&n)
-	fmt.Printf("O fatorial de %d é %d\n", n, fatorial(n))
+	fmt.Printf("O fatorial é %d\n", fatorial(n))
 }
 
 func fatorial(n int) int {
