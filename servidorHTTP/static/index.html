@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedHealth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Sistema hospitalar</p>
+      <h1>MedHealth</h1>
+    </div>
+    <button class="primary-button" id="openPatientForm" type="button">
+      + Adicionar paciente
+    </button>
+  </header>
+
+  <main class="page-shell">
+    <section class="overview">
+      <div>
+        <p class="eyebrow">Pacientes cadastrados</p>
+        <h2>Pacientes</h2>
+      </div>
+      <strong class="patient-count" id="patientCount">0</strong>
+    </section>
+
+    <section class="patients-section" aria-labelledby="patientsTitle">
+      <div class="section-heading">
+        <h2 id="patientsTitle">Lista de pacientes</h2>
+        <p>Todos os pacientes adicionados aparecem aqui.</p>
+      </div>
+
+      <div class="search-bar">
+        <label for="patientSearch">Pesquisar paciente</label>
+        <input type="search" id="patientSearch" placeholder="Digite o nome do paciente">
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <h3>Nenhum paciente cadastrado</h3>
+        <p>Clique em adicionar paciente para preencher o primeiro cadastro.</p>
+      </div>
+
+      <div class="patients-grid" id="patientsGrid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="patientModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" aria-labelledby="formTitle" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 id="formTitle">Adicionar paciente</h2>
+        <button class="icon-button" id="closePatientForm" type="button" aria-label="Fechar formulario">
+          &times;
+        </button>
+      </div>
+
+      <form id="patientForm" class="patient-form">
+        <label>
+          Nome
+          <input type="text" id="patientName" name="name" placeholder="Nome completo" required>
+        </label>
+
+        <label>
+          Data de nascimento
+          <input type="text" id="patientBirthDate" name="birthDate" placeholder="dd/mm/aaaa" inputmode="numeric" maxlength="10" required>
+        </label>
+
+        <label>
+          Diagnostico
+          <textarea id="patientDiagnosis" name="diagnosis" rows="4" placeholder="Diagnostico do paciente" required></textarea>
+        </label>
+
+        <label>
+          Data de alta medica
+          <input type="text" id="patientDischargeDate" name="dischargeDate" placeholder="dd/mm/aaaa" inputmode="numeric" maxlength="10" required>
+        </label>
+
+        <button class="primary-button full-width" id="savePatientButton" type="submit">Salvar paciente</button>
+        <button class="danger-button full-width is-hidden" id="deletePatientButton" type="button">Excluir paciente</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
